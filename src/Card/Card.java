@@ -25,5 +25,8 @@ public class Card {
 	public void setColor(CouleurEnum colorEnum) {
 		this.colorEnum=colorEnum;
 	}
+	public String ToString() {
+		return this.Rang+" de "+this.colorEnum;
+	}
 
 }
