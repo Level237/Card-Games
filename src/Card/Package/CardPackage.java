@@ -7,30 +7,40 @@ import Card.Card;
 import Enumeration.CouleurEnum;
 import Enumeration.RangEnum;
 
-public class CardPackage{
+public class CardPackage
+{
 
 	private List CardList;
 	private static final int LENGHT_CARD=52;
-	Card [] CardBoard;
+	private static Card [] CardBoard;
 	private Card card;
 	
 	public CardPackage() {
-		// TODO Auto-generated constructor stub
-		CardList=new ArrayList<Card>();
-		this.CardBoard=new Card[LENGHT_CARD];
 		
-		InitPackage(this.CardBoard);
+		CardList=new ArrayList<Card>();
+
+		this.CardBoard=new Card[CouleurEnum.values().length*RangEnum.values().length];
+		
+		InitPackage();
+		
+		
 	}
 	
-	public static void InitPackage(Card []CardBoard) {
-		
-		for(RangEnum rang:RangEnum.values()) {
-			int i=0;
-			    for(CouleurEnum color:CouleurEnum.values()) {
-				    CardBoard[i]=new Card(rang,color);
-				    System.out.println(CardBoard[i].ToString());
-			    }
-			i++;
+
+	public static void InitPackage()
+	{
+		for(int i=0;i<CouleurEnum.values().length;i++) {
+			for(int j=0;j<RangEnum.values().length;j++) {
+				CardBoard[i*RangEnum.values().length + j]=new Card(RangEnum.values()[j],CouleurEnum.values()[i]);
+				System.out.println(CardBoard[i*RangEnum.values().length + j].ToString());
+			}
 		}
 	}
-	}
+
+    public  void ToMixTogether() {
+        for(int i=0;i<52;i++) {
+        	System.out.println(this.CardBoard[i]);
+        }
+    }
+}
+
