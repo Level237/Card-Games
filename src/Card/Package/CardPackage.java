@@ -17,16 +17,18 @@ public class CardPackage
 	private static Card [] CardBoard;
 	private Card card;
 	
-	public CardPackage() {
+	public CardPackage() 
+	{
 		
 		CardList=new ArrayList<Card>();
 
 		this.CardBoard=new Card[CouleurEnum.values().length*RangEnum.values().length];
+		
+		// We initialize the card pack with the function InitPackage,and one sorting function with the function ToMixTogether.
 		InitPackage();
-		ToMixTogether();
+		ToMixTogether(this.CardList);
 		
-		
-	}
+    }
 	
 
 	public void InitPackage()
@@ -40,9 +42,9 @@ public class CardPackage
 		System.out.println("Mixing cards in progress..........");
 	}
 
-    public  void ToMixTogether() {
-              Collections.shuffle(CardList);
-              TravelMapList(CardList);
+    public  void ToMixTogether(List <Card> cardlist) {
+              Collections.shuffle(cardlist);
+              TravelMapList(cardlist);
         }
     
      public static void TravelMapList(List <Card> MapList) {
