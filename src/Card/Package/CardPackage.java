@@ -30,8 +30,7 @@ public class CardPackage
 		
     }
 	
-
-	public void InitPackage()
+    public void InitPackage()
 	{
 		for(int i=0;i<CouleurEnum.values().length;i++) {
 			for(int j=0;j<RangEnum.values().length;j++) {
@@ -52,6 +51,15 @@ public class CardPackage
     		 System.out.println(MapList.get(i).ToString());
     	 }
      }
+     
+     // Getters and other method of the List
+     public void getListCard() {
+    	 TravelMapList(this.CardList);
+     }
+     public int LenghtOfCard() {
+    	 return this.CardList.size();
+     }
+     
     }
 
 
