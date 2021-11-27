@@ -52,6 +52,12 @@ public class CardPackage
     		 System.out.println(MapList.get(i).ToString());
     	 }
      }
+     public void cardTakeCardsOfTheList(int numberOfCard) {
+    	 for(int i=0;i<this.CardList.size();i++) {
+    		 System.out.println("Cards taken in the package ---------------");
+    		 System.out.println(this.CardList.get(i).ToString());
+    	 }
+     }
      
      
      public Card TakeFirstCardOfTheList() {

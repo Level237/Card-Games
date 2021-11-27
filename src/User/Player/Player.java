@@ -22,11 +22,28 @@ public class Player implements UserInterFace{
 	@Override
 	public void PickOut(CardPackage pack) {
 		// TODO Auto-generated method stub
-		this.CardOfPlayer.add(pack.TakeFirstCardOfTheList());
-		pack.RemoveCardOfTheList(1);
-		System.out.println(pack.RestOftheCard());
-		this.MaximumPickOut--;
+		
+		
+		if(this.MaximumPickOut!=0)
+		{
+			//The player takes a card in the package
+		    this.CardOfPlayer.add(pack.TakeFirstCardOfTheList());
+		    pack.RemoveCardOfTheList(1);
+		    System.out.println(pack.RestOftheCard());
+		    this.MaximumPickOut--;
 		}
+		else {
+			System.out.println(" :( Your number of drawing is complete");
+		}
+	}
+	
+	@Override
+	public void InitCardOfThePlayer(CardPackage pack) {
+		
+		
+		
+	}
+	
 	public void TravelCardofPlayer() {
 		for(int i=0;i<this.CardOfPlayer.size();i++) {
 			
@@ -35,7 +52,7 @@ public class Player implements UserInterFace{
 	}
 	
 	
-	//getter 
+	
 	public int getMaximumPickOut() {
 		return this.MaximumPickOut;
 	}
@@ -43,6 +60,8 @@ public class Player implements UserInterFace{
 		System.out.println("Card Of Player "+this.Name+"------------------------------------");
 		this.TravelCardofPlayer();
 	}
+	
+	
 	
 	
 
