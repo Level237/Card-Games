@@ -39,10 +39,21 @@ public class Player implements UserInterFace{
 	
 	@Override
 	public void InitCardOfThePlayer(CardPackage pack) {
-		
-		
-		
+		System.out.println("Player's cards");
+		// 4 cards are recovered in the packets for a player
+		for(int i=0;i<4;i++) {
+			this.CardOfPlayer.add(pack.getIndexOfTheCard(i));
+			pack.RemoveCardOfTheList(i);
+		}
+		this.TravelCardofPlayer();
+	    
+		}
+	public void TravelCardOfThePlayer() {
+		for(int i=0;i<this.CardOfPlayer.size();i++) {
+			System.out.println(this.CardOfPlayer.get(i));
+		}
 	}
+	
 	
 	public void TravelCardofPlayer() {
 		for(int i=0;i<this.CardOfPlayer.size();i++) {
