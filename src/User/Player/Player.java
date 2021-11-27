@@ -22,8 +22,10 @@ public class Player implements UserInterFace{
 	@Override
 	public void PickOut(CardPackage pack) {
 		// TODO Auto-generated method stub
-		
-	}
+		this.CardOfPlayer.add(pack.TakeFirstCardOfTheList());
+		pack.RemoveCardOfTheList(1);
+		System.out.println(pack.RestOftheCard());
+		}
 	
 
 	}

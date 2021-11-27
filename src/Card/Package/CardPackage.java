@@ -38,10 +38,11 @@ public class CardPackage
 				this.CardList.add(CardBoard[i*RangEnum.values().length + j]);
 			}
 		}
-		System.out.println("Mixing cards in progress..........");
+		
 	}
 
     public  void ToMixTogether(List <Card> cardlist) {
+    	System.out.println("Mixing cards in progress..........");
               Collections.shuffle(cardlist);
               TravelMapList(cardlist);
         }
@@ -52,12 +53,25 @@ public class CardPackage
     	 }
      }
      
+     
+     public Card TakeFirstCardOfTheList() {
+    	 
+    	 return this.CardList.get(1);
+     }
+     
+     public void RemoveCardOfTheList(int index) {
+    	 this.CardList.remove(index);
+     }
+     
      // Getters and other method of the List
      public void getListCard() {
     	 TravelMapList(this.CardList);
      }
      public int LenghtOfCard() {
     	 return this.CardList.size();
+     }
+     public String RestOftheCard() {
+    	 return "there are "+this.LenghtOfCard()+" Card(s) in the package";
      }
      
     }
