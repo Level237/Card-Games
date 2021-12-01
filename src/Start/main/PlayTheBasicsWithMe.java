@@ -10,8 +10,8 @@ public class PlayTheBasicsWithMe {
 		CardPackage Card=new CardPackage();
 		Player player=new Player("martin");
 		CardField field=new CardField(Card,player);
-		
-		System.out.println(Card.LenghtOfCard());
+		player.PickOut(Card);
+		player.getCardOfPlayer();
 	}
 
 }

@@ -44,7 +44,7 @@ public class CardPackage
     public  void ToMixTogether(List <Card> cardlist) {
     	System.out.println("Mixing cards in progress..........");
               Collections.shuffle(cardlist);
-              TravelMapList(cardlist);
+              // If you want to display the list of all cards from the list TravelMapList(cardlist);
         }
     
      public static void TravelMapList(List <Card> MapList) {

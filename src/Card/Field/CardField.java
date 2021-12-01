@@ -16,6 +16,7 @@ public class CardField {
 		this.PackCard=PackCard;
 		this.player=player;
 		this.CardOfTheCenter=new ArrayList<Card>();
+		System.out.println("Start -------------------------");
 		initCenter();
 		this.getCardOfTheCenter();
 		
@@ -30,7 +31,8 @@ public class CardField {
 		for(int i=0;i<this.CardOfTheCenter.size();i++) {
 			System.out.println(this.CardOfTheCenter.get(i).ToString());
 		}
-		
+		System.out.println("---------------------------------------------");
+		System.out.println("There are "+this.PackCard.LenghtOfCard()+" Cards in the package");
 	}
 	
 
