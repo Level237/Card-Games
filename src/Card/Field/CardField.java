@@ -15,10 +15,12 @@ public class CardField {
 		this.PackCard=PackCard;
 		this.player=player;
 		this.CardOfTheCenter=new ArrayList<Card>();
+		initCenter();
 		
 	}
 	public void initCenter() {
-		
+		this.CardOfTheCenter.add(this.PackCard.TakeFirstCardOfTheList());
+		this.PackCard.RemoveCardOfTheList(1);
 	}
 	
 
