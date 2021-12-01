@@ -12,15 +12,25 @@ public class CardField {
 	
 	public CardField(CardPackage PackCard,Player player) {
 		// TODO Auto-generated constructor stub
+		
 		this.PackCard=PackCard;
 		this.player=player;
 		this.CardOfTheCenter=new ArrayList<Card>();
 		initCenter();
+		this.getCardOfTheCenter();
 		
 	}
 	public void initCenter() {
-		this.CardOfTheCenter.add(this.PackCard.TakeFirstCardOfTheList());
+		this.CardOfTheCenter.add(this.PackCard.getIndexOfTheCard(1));
 		this.PackCard.RemoveCardOfTheList(1);
+		
+	}
+	public void getCardOfTheCenter() {
+		System.out.println("List of Card in the center");
+		for(int i=0;i<this.CardOfTheCenter.size();i++) {
+			System.out.println(this.CardOfTheCenter.get(i).ToString());
+		}
+		
 	}
 	
 
